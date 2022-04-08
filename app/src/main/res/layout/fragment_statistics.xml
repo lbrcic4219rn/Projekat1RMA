@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/statisticsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="RAF Jira statistics"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="40dp"
+        />
+    <TextView
+        android:id="@+id/todoHeader"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statisticsTitle"
+        android:text="ToDo"
+        android:textSize="24dp"
+        android:textColor="@color/colorError"
+        android:layout_margin="20dp"
+        />
+    <TextView
+        android:id="@+id/todoCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statisticsTitle"
+        android:text="20"
+        android:textSize="24dp"
+        android:textColor="@color/colorError"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:id="@+id/todoEnhancementHeader"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statisticsTitle"
+        android:text="Enhancement"
+        android:textSize="24dp"
+        android:layout_marginTop="72dp"
+        />
+    <TextView
+        android:id="@+id/todoEnhancementCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/todoCount"
+        android:text="20"
+        android:textSize="24dp"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:id="@+id/todoBugHeader"
+        app:layout_constraintHorizontal_bias="0.35"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/todoEnhancementHeader"
+        android:text="Bugs"
+        android:textSize="24dp"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:id="@+id/todoBugCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/todoEnhancementCount"
+        android:text="10"
+        android:textSize="24dp"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:id="@+id/inProgressHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/todoBugHeader"
+        android:layout_margin="20dp"
+        android:textSize="24dp"
+        android:text="In progress"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/colorWarning"
+        />
+    <TextView
+        android:id="@+id/inProgressCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/todoBugCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"
+        android:textSize="24dp"
+        android:text="20"
+        android:textColor="@color/colorWarning"
+        />
+    <TextView
+        android:id="@+id/inProgressEnhancementHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/inProgressHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Enhancements"
+        android:textSize="24dp"
+        android:layout_margin="20dp"
+        />
+    <TextView
+        android:id="@+id/inProgressEnhancementCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inProgressCount"
+        android:text="10"
+        android:textSize="24dp"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:id="@+id/inProgressBugHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Bugs"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inProgressEnhancementHeader" />
+
+    <TextView
+        android:id="@+id/inProgressBugCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inProgressEnhancementCount"
+        android:text="10"
+        android:textSize="24dp"
+        android:layout_margin="20dp"
+        />
+
+
+    <TextView
+        android:id="@+id/DoneHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/inProgressBugHeader"
+        android:layout_margin="20dp"
+        android:textSize="24dp"
+        android:text="Done"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/colorSuccess"
+        />
+    <TextView
+        android:id="@+id/doneCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/inProgressBugCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"
+        android:textSize="24dp"
+        android:text="20"
+        android:textColor="@color/colorSuccess"
+        />
+
+    <TextView
+        android:id="@+id/DoneEnhancementHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/DoneHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Enhancements"
+        android:textSize="24dp"
+        android:layout_margin="20dp"
+        />
+    <TextView
+        android:id="@+id/doneEnhancementCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/doneCount"
+        android:text="10"
+        android:textSize="24dp"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Bugs"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/DoneEnhancementHeader" />
+    <TextView
+        android:id="@+id/doneBugCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/doneEnhancementCount"
+        android:text="10"
+        android:textSize="24dp"
+        android:layout_margin="20dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
