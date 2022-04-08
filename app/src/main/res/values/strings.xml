@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Projekat1</string>
+    <string name="statisticsHeader">RAF Jira statistics</string>
+    <string name="todoHeader">ToDo</string>
+    <string name="enhancement">Enhancements</string>
+    <string name="bug">Bugs</string>
+    <string name="inProgressHeader">In progress</string>
+    <string name="doneHeader">Done</string>
+    <string name="addNewTicketHeader">Add new ticket</string>
+    <string name="ticketTitle">Ticket title</string>
+    <string name="ticketDescription">Ticket Description</string>
+    <string name="statistics">statistics</string>
+    <string name="newText">new</string>
+    <string name="tickets">tickets</string>
+    <string name="profile">profile</string>
+    <string name="allFieldsRequired">All fields are required</string>
+    <string name="logOut">log out</string>
+    <string name="search">Search...</string>
+    <string name="ticketType">Ticket type</string>
+    <string name="priority">Priority</string>
+    <string name="edit">edit</string>
+    <string name="estimation">Estimation</string>
+    <string name="description">Description</string>
+    <string name="editHeader">Edit Ticket</string>
+    <string name="save">save</string>
+    <string name="loggedTime">Logged time</string>
+
 </resources>

@@ -44,7 +44,7 @@
         android:id="@+id/logOutButton"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Log out"
+        android:text="@string/logOut"
         android:layout_margin="20dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
 

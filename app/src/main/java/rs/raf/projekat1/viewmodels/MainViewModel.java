@@ -85,6 +85,14 @@ public class MainViewModel extends ViewModel {
         return tickets;
     }
 
+    public Ticket getTicketById(int id){
+        Optional<Ticket> ticketOptional = ticketList.stream().filter(ticket -> ticket.getId() == id).findFirst();
+        if(ticketOptional.isPresent()){
+            return ticketOptional.get();
+        }
+        return null;
+    }
+
     public void filterTickets(String filter){
         List<Ticket> filteredList = ticketList.stream().filter(ticket -> ticket.getTitle().toLowerCase().contains(filter.toLowerCase())).collect(Collectors.toList());
         tickets.setValue(filteredList);
@@ -128,7 +136,7 @@ public class MainViewModel extends ViewModel {
         update();
     }
 
-    private void update() {
+    public void update() {
         ArrayList<Ticket> ticketsToSubmit = new ArrayList<>(ticketList);
         tickets.setValue(ticketsToSubmit);
     }
@@ -173,8 +181,8 @@ public class MainViewModel extends ViewModel {
 
     //DONE
     public void filterDoneTickets(String filter){
-        List<Ticket> filteredList = inProgressTicketList.stream().filter(ticket -> ticket.getTitle().toLowerCase().contains(filter.toLowerCase())).collect(Collectors.toList());
-        inProgressTickets.setValue(filteredList);
+        List<Ticket> filteredList = doneTicketList.stream().filter(ticket -> ticket.getTitle().toLowerCase().contains(filter.toLowerCase())).collect(Collectors.toList());
+        doneTickets.setValue(filteredList);
     }
 
     public void addDoneTicket(Ticket ticket){
@@ -185,6 +193,56 @@ public class MainViewModel extends ViewModel {
         doneTickets.setValue(ticketsToSubmit);
         //NOTIFY
         update();
+    }
 
+
+    public void updateTicketIncrement(int id){
+        Optional<Ticket> ticketOptional = ticketList.stream().filter(ticket -> ticket.getId() == id).findFirst();
+        if(ticketOptional.isPresent()){
+            Ticket ticket = ticketOptional.get();
+            ticket.setLoggedTime(ticket.getLoggedTime() + 1);
+        }
+        ArrayList<Ticket> ticketsToSubmitTodo = new ArrayList<>(todoTicketList);
+        inProgressTickets.setValue(ticketsToSubmitTodo);
+        ArrayList<Ticket> ticketsToSubmitInProgress = new ArrayList<>(inProgressTicketList);
+        inProgressTickets.setValue(ticketsToSubmitInProgress);
+        ArrayList<Ticket> ticketsToSubmitDone = new ArrayList<>(doneTicketList);
+        inProgressTickets.setValue(ticketsToSubmitDone);
+        update();
+    }
+
+    public void updateTicketDecrement(int id){
+        Optional<Ticket> ticketOptional = ticketList.stream().filter(ticket -> ticket.getId() == id).findFirst();
+        if(ticketOptional.isPresent()){
+            Ticket ticket = ticketOptional.get();
+            ticket.setLoggedTime(ticket.getLoggedTime() - 1);
+        }
+        ArrayList<Ticket> ticketsToSubmitTodo = new ArrayList<>(todoTicketList);
+        inProgressTickets.setValue(ticketsToSubmitTodo);
+        ArrayList<Ticket> ticketsToSubmitInProgress = new ArrayList<>(inProgressTicketList);
+        inProgressTickets.setValue(ticketsToSubmitInProgress);
+        ArrayList<Ticket> ticketsToSubmitDone = new ArrayList<>(doneTicketList);
+        inProgressTickets.setValue(ticketsToSubmitDone);
+        update();
+    }
+
+    public void voidUpdateTicket(int id, TicketType ticketType, TicketPriority ticketPriority, int est, String title, String desc) {
+        Optional<Ticket> ticketOptional = ticketList.stream().filter(ticket -> ticket.getId() == id).findFirst();
+        if(ticketOptional.isPresent()){
+            Ticket ticket = ticketOptional.get();
+            ticket.setTicketType(ticketType);
+            ticket.setTicketPriority(ticketPriority);
+            ticket.setEstimation(est);
+            ticket.setTitle(title);
+            ticket.setDescription(desc);
+        }
+
+        ArrayList<Ticket> ticketsToSubmitTodo = new ArrayList<>(todoTicketList);
+        inProgressTickets.setValue(ticketsToSubmitTodo);
+        ArrayList<Ticket> ticketsToSubmitInProgress = new ArrayList<>(inProgressTicketList);
+        inProgressTickets.setValue(ticketsToSubmitInProgress);
+        ArrayList<Ticket> ticketsToSubmitDone = new ArrayList<>(doneTicketList);
+        inProgressTickets.setValue(ticketsToSubmitDone);
+        update();
     }
 }

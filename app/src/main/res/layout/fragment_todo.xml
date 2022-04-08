@@ -7,7 +7,7 @@
     <EditText
         android:id="@+id/todoSearch"
         style="@style/textEditStyle"
-        android:hint="Search..."
+        android:hint="@string/search"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

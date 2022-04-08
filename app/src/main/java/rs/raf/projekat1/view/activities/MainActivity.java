@@ -2,6 +2,8 @@ package rs.raf.projekat1.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
@@ -13,7 +15,9 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import rs.raf.projekat1.R;
+import rs.raf.projekat1.view.fragments.MainFragment;
 import rs.raf.projekat1.view.viewpager.PageAdapterMenu;
+import rs.raf.projekat1.viewmodels.MainViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,9 +34,10 @@ public class MainActivity extends AppCompatActivity {
     public static final String USERNAME_KEY = "username_key";
     public static final String EMAIL_KEY = "email";
     public static final String TICKET_DETAIL_TAG = "ticketDetails";
+    public static final String TICKET_EDIT_TAG = "ticketEdit";
 
+    private MainViewModel viewModel;
 
-    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,26 +68,16 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         setContentView(R.layout.activity_main);
-        initViewPager();
-        initNavigation();
+        viewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
-
+        initFragment();
     }
 
-    private void initNavigation() {
-        ((BottomNavigationView) findViewById(R.id.bottomNavigation)).setOnItemSelectedListener(item -> {
-            switch (item.getItemId()){
-                case R.id.statistics: viewPager.setCurrentItem(PageAdapterMenu.FRAGMENT_STATISTICS, false); break;
-                case R.id.createTicket: viewPager.setCurrentItem(PageAdapterMenu.FRAGMENT_NEW_TICKET, false); break;
-                case R.id.tickets: viewPager.setCurrentItem(PageAdapterMenu.FRAGMENT_TICKET_LIST, false); break;
-                default: viewPager.setCurrentItem(PageAdapterMenu.FRAGMENT_PROFILE, false); break;
-            }
-            return true;
-        });
+    private void initFragment() {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.mainFragmentContainer, new MainFragment());
+        transaction.commit();
     }
 
-    private void initViewPager() {
-        viewPager = findViewById(R.id.viewPager);
-        viewPager.setAdapter(new PageAdapterMenu(getSupportFragmentManager()));
-    }
+
 }

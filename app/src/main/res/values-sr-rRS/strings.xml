@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Projekat1</string>
+    <string name="statisticsHeader">Raf Jira statistika</string>
+    <string name="todoHeader">Na cekanju</string>
+    <string name="enhancement">Unapredjenja</string>
+    <string name="bug">Bugovi</string>
+    <string name="inProgressHeader">U izradi</string>
+    <string name="doneHeader">Uradjeno</string>
+    <string name="addNewTicketHeader">Dodajte novi tiket</string>
+    <string name="ticketTitle">Naziv tiketa</string>
+    <string name="ticketDescription">Opis tiketa</string>
+    <string name="statistics">statistika</string>
+    <string name="newText">napravi novi</string>
+    <string name="tickets">tiketi</string>
+    <string name="profile">profil</string>
+    <string name="allFieldsRequired">Sva polja su obavezna</string>
+    <string name="logOut">Odjavi se</string>
+    <string name="search">Pretraga...</string>
+    <string name="ticketType">Tip tiketa</string>
+    <string name="priority">Prioritet</string>
+    <string name="edit">izmeni</string>
+    <string name="estimation">Predvidanje</string>
+    <string name="description">Opis</string>
+    <string name="editHeader">Izmeni tiket</string>
+    <string name="save">sacuvaj</string>
+    <string name="loggedTime">Zabelezeno vreme</string>
+</resources>
